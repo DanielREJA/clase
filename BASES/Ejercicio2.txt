@@ -1,0 +1,26 @@
+DROP DATABASE IF EXISTS ACADEMIA_VIRTUAL;
+
+CREATE DATABASE ACADEMIA_VIRTUAL;
+
+USE ACADEMIA_VIRTUAL;
+
+CREATE TABLE CATEGORIAS(
+	id_categoria INTEGER AURO_INCREMENT PRIMARY KEY,
+	nombre_categoria VARCHAR(40) UNIQUE NOT NULL,
+	descripcion VARCHAR(150),
+	activa CHAR (1) DEFAULT 'S',
+	CONSTRAINT ck_activa CHECK (activa IN ('S', 'N'))
+);
+
+CREATE TABLE INSTRUCTORES (
+	email VARCHAR(100) PRIMARY KEY,
+	nombre_categoria VARCHAR(80) NOT NULL,
+	biografia TEXT,
+	fecha_registro DATETIME DEFAULT NOW(),
+	puntuacion_media DECIMAL(3,2),
+	certificado CHAR(1),
+	linkedin TEXT,
+	CONSTRAINT ck_puntuacion_media CHECK (puntuacion_media >= 0 AND puntuacion_media <= 5),
+	CONSTRAINT ck_certificado CHECK (certificado IN ('S', 'N'))
+);
+
