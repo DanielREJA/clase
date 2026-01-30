@@ -1,3 +1,5 @@
+package TEMA3;
+
 import java.util.Scanner;
 
 public class Ejercicio16_Tema3 {

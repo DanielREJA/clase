@@ -1,4 +1,4 @@
-package PRACTICA;
+package TEMA3;
 
 import java.util.Scanner;
 
